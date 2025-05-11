@@ -279,6 +279,7 @@ animations = [{
 height = 26.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 14
 script = ExtResource("1_0owmy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -288,6 +289,7 @@ autoplay = "run"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(12, 0)
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0owmy")

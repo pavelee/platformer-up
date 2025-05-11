@@ -76,3 +76,8 @@ func jump() -> void:
 		animated_sprite_2d.play("duble_jump")
 	else:
 		animated_sprite_2d.play("jump")
+
+func dead() -> void:
+	can_move = false
+	velocity = Vector2.ZERO
+	animated_sprite_2d.play("dead")
