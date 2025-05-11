@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://7ggmotmnlsru"]
+
+[ext_resource type="Script" uid="uid://b7llgkr6vidpm" path="res://scenes/enemy/enemy_base.gd" id="1_un3sv"]
+
+[node name="EnemyBase" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_un3sv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="TopArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea"]
+
+[node name="BottomArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea"]

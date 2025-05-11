@@ -77,7 +77,20 @@ func jump() -> void:
 	else:
 		animated_sprite_2d.play("jump")
 
+func bounce_up(amount: float) -> void:
+	velocity.y = amount * -1
+
+func is_dead() -> bool:
+	return can_move == false
+
 func dead() -> void:
+	if not can_move:
+		return
 	can_move = false
 	velocity = Vector2.ZERO
 	animated_sprite_2d.play("dead")
+	
+func respawn() -> void:
+	animated_sprite_2d.play("respawn")
+	await animated_sprite_2d.animation_finished
+	can_move = true
