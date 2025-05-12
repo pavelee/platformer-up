@@ -13,13 +13,17 @@ func _on_top_area_body_entered(body: Node2D) -> void:
 	if body is not Player:
 		return
 	
+	var player = body as Player
+	
+	if player.is_dead():
+		return
+
 	dead = true
 	
-	var player = body as Player
 	custom_path.can_move = false
 	animated_sprite_2d.play("hit")
 	animated_sprite_2d.animation_finished.connect(func(): queue_free())
-	player.bounce_up(250)
+	player.bounce_up(450)
 
 func _on_bottom_area_body_entered(body: Node2D) -> void:
 	if body is not Player or dead:
