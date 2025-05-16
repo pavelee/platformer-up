@@ -1,4 +1,4 @@
-# Flappy Bird Clone
+# Simple Platformer Game
 
 Game created using godot
 
