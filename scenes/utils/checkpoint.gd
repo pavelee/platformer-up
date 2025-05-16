@@ -28,6 +28,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is not Player or is_reached():
 		return
 	
+	if (body as Player).is_dead():
+		return
+	
 	reach()
 	EventManager.on_player_reached_checkpoint.emit(self)
 	
